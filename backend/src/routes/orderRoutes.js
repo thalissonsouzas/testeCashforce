@@ -1,7 +1,7 @@
 // src/routes/orderRoutes.js
 const express = require('express');
 const router = express.Router();
-const { Order, Invoice, Buyer, Provider } = require('../../models'); // Ajuste conforme a estrutura do seu modelo
+const { Order, Buyer, Provider } = require('../../models'); // Ajuste conforme a estrutura do seu modelo
 
 // Obter nota fical, data de emissão, valor e status de ordens. Obter nome do comprador da tabela Buyer e nome do fornecedor da tabela Provider
 

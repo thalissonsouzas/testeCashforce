@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   try {
     const orderPortions = await OrderPortion.findAll();
     res.json(orderPortions);
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Erro ao buscar partes de ordens' });
   }
 });

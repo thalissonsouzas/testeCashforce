@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   try {
     const cnpjs = await Cnpj.findAll();
     res.json(cnpjs);
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Erro ao buscar CNPJs' });
   }
 });

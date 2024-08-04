@@ -5,7 +5,7 @@ import Modal from './Modal'; // Importe o componente Modal
 
 function Table() {
   const { selectedMenu } = useContext(GlobalStateContext);
-  const { fornecedores, setFornecedores } = useContext(GlobalStateContext);
+  const { setFornecedores } = useContext(GlobalStateContext);
   const [data, setData] = useState([]);
   const [chaves, setChaves] = useState([]);
   const [valores, setValores] = useState([]);

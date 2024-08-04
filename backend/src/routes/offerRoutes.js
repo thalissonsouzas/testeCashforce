@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   try {
     const offers = await Offer.findAll();
     res.json(offers);
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Erro ao buscar ofertas' });
   }
 });

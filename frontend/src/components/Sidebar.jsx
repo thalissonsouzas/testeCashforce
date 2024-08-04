@@ -5,7 +5,7 @@ import barraSelect from '../../public/barraSelect.svg';
 import { GlobalStateContext } from '../context/GlobalStateContext';
 
 function Sidebar() {
-    const { selectedMenu, setSelectedMenu, setData, data } = useContext(GlobalStateContext);
+    const { selectedMenu, setSelectedMenu } = useContext(GlobalStateContext);
 
     const handleMenuClick = async (menu) => {
         setSelectedMenu(menu);

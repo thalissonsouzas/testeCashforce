@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   try {
     const sponsors = await Sponsor.findAll();
     res.json(sponsors);
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Erro ao buscar patrocinadores' });
   }
 });

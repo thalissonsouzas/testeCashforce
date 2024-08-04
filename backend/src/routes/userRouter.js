@@ -8,20 +8,20 @@ router.get('/', async (req, res) => {
   try {
     const users = await User.findAll();
     res.json(users);
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Erro ao buscar usuários' });
   }
 });
 
 // src/routes/orderRoutes.js
-const { Order, Invoice, Buyer, Provider } = require('../../models'); // Ajuste conforme a estrutura do seu modelo
+const { Order, Buyer, Provider } = require('../../models'); // Ajuste conforme a estrutura do seu modelo
 
 // Obter todas as ordens
 router.get('/', async (req, res) => {
   try {
     const orders = await Order.findAll();
     res.json(orders);
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Erro ao buscar ordens' });
   }
 });
@@ -45,7 +45,7 @@ router.get('/details', async (req, res) => {
       ]
     });
     res.json(orderDetails);
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Erro ao buscar detalhes das ordens' });
   }
 });

@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
       ]
     });
     res.json(providers);
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Erro ao buscar provedores' });
   }
 });
