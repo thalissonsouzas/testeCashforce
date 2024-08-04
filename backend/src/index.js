@@ -43,6 +43,7 @@ app.use('/api/order-portions', orderPortionRoutes);
 app.use('/api/providers', providerRoutes);
 app.use('/api/sponsors', sponsorRoutes);
 
+
 // Rota raiz
 app.get('/', (req, res) => {
   res.send('API está funcionando!');

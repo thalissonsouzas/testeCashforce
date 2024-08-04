@@ -6,7 +6,14 @@ const { Provider } = require('../../models'); // Ajuste conforme a estrutura do 
 // Obter todos os provedores
 router.get('/', async (req, res) => {
   try {
-    const providers = await Provider.findAll();
+    const providers = await Provider.findAll({
+      attributes: [
+        ['name', 'NOME'],
+        ['tradingName', 'EMPRESA'],
+        ['responsiblePosition', 'CARGO'],
+        ['phoneNumber', 'TELEFONE']
+      ]
+    });
     res.json(providers);
   } catch (error) {
     res.status(500).json({ error: 'Erro ao buscar provedores' });

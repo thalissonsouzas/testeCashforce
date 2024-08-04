@@ -22,7 +22,7 @@ module.exports = {
         userId: 1,   // Assumindo que o ID 1 existe na tabela de Users
         buyerId: 1,  // Assumindo que o ID 1 existe na tabela Buyer
         providerId: 1, // Assumindo que o ID 1 existe na tabela Provider
-        orderStatusBuyer: '0',
+        orderStatusBuyer: '7',
         orderStatusProvider: '0',
         deliveryReceipt: 'delivery_receipt_2024001.pdf',
         cargoPackingList: 'cargo_packing_list_2024001.pdf',
@@ -46,7 +46,7 @@ module.exports = {
         userId: 2,   // Assumindo que o ID 2 existe na tabela de Users
         buyerId: 2,  // Assumindo que o ID 2 existe na tabela Buyer
         providerId: 2, // Assumindo que o ID 2 existe na tabela Provider
-        orderStatusBuyer: '1',
+        orderStatusBuyer: '7',
         orderStatusProvider: '1',
         deliveryReceipt: 'delivery_receipt_2024002.pdf',
         cargoPackingList: 'cargo_packing_list_2024002.pdf',
@@ -118,7 +118,7 @@ module.exports = {
         userId: 5,   // Assumindo que o ID 5 existe na tabela de Users
         buyerId: 5,  // Assumindo que o ID 5 existe na tabela Buyer
         providerId: 5, // Assumindo que o ID 5 existe na tabela Provider
-        orderStatusBuyer: '0',
+        orderStatusBuyer: '7',
         orderStatusProvider: '1',
         deliveryReceipt: 'delivery_receipt_2024005.pdf',
         cargoPackingList: 'cargo_packing_list_2024005.pdf',
