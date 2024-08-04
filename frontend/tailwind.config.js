@@ -9,6 +9,7 @@ export default {
       colors: {
         'custom-green': '#00AD8C', 
         'dark-blue': '#021B51',
+        'custom-purple': '#3d5dfc',
       },
       fontFamily: {
         'dm-sans': ['DM Sans', 'sans-serif'],
@@ -21,7 +22,10 @@ export default {
       },
       lineHeight: {
         'tight': '18.23px',
-      }
+      },
+      screens: {
+        'custom': '900px',
+      },
     },
   },
   plugins: [],
