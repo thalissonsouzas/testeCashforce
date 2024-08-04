@@ -14,7 +14,7 @@ function Sidebar() {
     };
 
     return (
-        <aside className='bg-slate-100 h-screen w-60 shadow-lg flex-none'>
+        <aside className='bg-slate-50 h-screen w-60 shadow-lg flex-none'>
             <div className='w-full'>
                 <img src={logo} alt='Logo' className='flex p-4' />
                 <menu className='flex flex-col items-start w-full text-custom-green font-dm-sans text-p14 font-semibold leading-tight text-left'>
