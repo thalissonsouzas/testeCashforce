@@ -1,11 +1,30 @@
+// src/components/Table.jsx
 import React, { useContext, useEffect, useState } from 'react';
 import { GlobalStateContext } from '../context/GlobalStateContext';
+import Modal from './Modal'; // Importe o componente Modal
 
 function Table() {
   const { selectedMenu } = useContext(GlobalStateContext);
+  const { fornecedores, setFornecedores } = useContext(GlobalStateContext);
   const [data, setData] = useState([]);
   const [chaves, setChaves] = useState([]);
   const [valores, setValores] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const fetchFornecedores = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/api/providers');
+      const result = await response.json();
+      setFornecedores(result);
+    } catch (error) {
+      console.error('Error fetching providers:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchFornecedores();
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,7 +66,22 @@ function Table() {
       setChaves(chaves);
       setValores(valores);
     }
-  }, [data]); // Atualiza chaves e valores quando `data` muda
+  }, [data]);
+
+  const handleOpenModal = (item) => {
+    setSelectedItem(item);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedItem(null);
+  };
+
+  const handleButtonClick = (event, item) => {
+    event.preventDefault(); // Previne o comportamento padrão do botão
+    handleOpenModal(item);
+  };
 
   return (
     <div className="overflow-x-auto ml-5 mr-5 text-sm">
@@ -61,17 +95,35 @@ function Table() {
         </thead>
         <tbody>
           {valores.map((linha, index) => (
-            <tr key={index} className="bg-white  font-semibold text-gray-600">
+            <tr key={index} className="bg-white font-semibold text-gray-600">
               {linha.map((valor, idx) => (
-                <td key={idx} className={`px-4 py-2 border-b-2 border-t-2 ${idx === 0 ? 'border-l-2 rounded' : ''} ${ idx == '5' ? 'text-custom-green' : ''} ${ idx == '4' ? 'text-custom-green' : ''} border-gray-200`}>{valor}</td>
+                <td key={idx} className={`px-4 py-2 border-b-2 border-t-2 ${idx === 0 ? 'border-l-2 rounded' : ''} ${idx === 5 || idx === 4 ? 'text-custom-green' : ''} border-gray-200`}>
+                  {valor}
+                </td>
               ))}
-              <td className="px-4 py-2 border-b-2 border-t-2 border-r-2 rounded-r-md border-gray-200">
-                <button className="border border-gray-200 bg-white rounded-full px-3 py-1">Dados do cedente</button>
-              </td>
+              {selectedMenu === 'Notas fiscais' && (
+                <td className="px-4 py-2 border-b-2 border-t-2 border-r-2 rounded-r-md border-gray-200">
+                  <button
+                    className="border border-gray-200 bg-white rounded-full px-3 py-1"
+                    onClick={(e) => handleButtonClick(e, linha)} // Usa a função handleButtonClick
+                  >
+                    Dados do cedente
+                  </button>
+                </td>
+              )}
+              {selectedMenu !== 'Notas fiscais' && (
+                <td className="px-4 py-2 border-b-2 border-t-2 border-r-2 rounded-r-md border-gray-200">
+ 
+                </td>
+              )}
             </tr>
           ))}
         </tbody>
       </table>
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        <h2 className="text-xl font-semibold mb-4">Dados do Cedente</h2>
+        <pre>{JSON.stringify(selectedItem, null, 2)}</pre>
+      </Modal>
     </div>
   );
 }

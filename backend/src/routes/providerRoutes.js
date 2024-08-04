@@ -11,7 +11,10 @@ router.get('/', async (req, res) => {
         ['name', 'NOME'],
         ['tradingName', 'EMPRESA'],
         ['responsiblePosition', 'CARGO'],
-        ['phoneNumber', 'TELEFONE']
+        ['phoneNumber', 'TELEFONE'],
+        ['email', 'E-MAIL'],
+        ['city', 'CIDADE']
+
       ]
     });
     res.json(providers);
