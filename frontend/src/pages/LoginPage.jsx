@@ -86,7 +86,7 @@ const LoginPage = () => {
         </div>
 
         {/* Segundo Box */}
-        <div className='hidden lg:block lg:w-1/2 h-screen relative flex items-center justify-center'>
+        <div className='hidden lg:block lg:w-1/2 h-screen relative items-center justify-center'>
           {/* Vídeo de fundo */}
           <video 
             autoPlay 

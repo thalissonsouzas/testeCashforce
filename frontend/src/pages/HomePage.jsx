@@ -8,7 +8,7 @@ import { GlobalStateContext } from '../context/GlobalStateContext'
 
 function App() {
 
-  const { selectedMenu, setSelectedMenu } = useContext(GlobalStateContext);
+  const { selectedMenu } = useContext(GlobalStateContext);
   const s1 = 'Visualize as notas fiscais que você tem.'
   const s2 = 'Visualize todos os seus compradores.'
   const s3 = 'Visualize os seus fornecedores.'
