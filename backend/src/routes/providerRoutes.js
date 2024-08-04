@@ -22,5 +22,24 @@ router.get('/', async (req, res) => {
     res.status(500).json({ error: 'Erro ao buscar provedores' });
   }
 });
+    router.get('/:cedente', async (req, res) => {
+  try {
+    const { cedente } = req.params;
+    const provider = await Provider.findOne({
+      where: { name: cedente },
+      attributes: [
+        ['name', 'NOME'],
+        ['tradingName', 'EMPRESA'],
+        ['responsiblePosition', 'CARGO'],
+        ['phoneNumber', 'TELEFONE'],
+        ['email', 'E-MAIL'],
+        ['city', 'CIDADE']
+      ]
+    });
+    res.json(provider);
+  }
+  catch {
+    res.status(500).json({ error: 'Erro ao buscar provedor' });
+  } });
 
 module.exports = router;

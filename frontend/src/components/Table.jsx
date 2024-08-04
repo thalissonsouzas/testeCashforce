@@ -10,7 +10,7 @@ function Table() {
   const [chaves, setChaves] = useState([]);
   const [valores, setValores] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [cedente, setCedente] = useState(null);
 
   const fetchFornecedores = async () => {
     try {
@@ -29,25 +29,14 @@ function Table() {
   useEffect(() => {
     const fetchData = async () => {
       setData([]);
-      if (selectedMenu === 'Notas fiscais') {
+      let url = '';
+      if (selectedMenu === 'Notas fiscais') url = 'http://localhost:3000/api/orders';
+      else if (selectedMenu === 'Compradores') url = 'http://localhost:3000/api/buyers';
+      else if (selectedMenu === 'Fornecedores') url = 'http://localhost:3000/api/providers';
+      
+      if (url) {
         try {
-          const response = await fetch('http://localhost:3000/api/orders');
-          const result = await response.json();
-          setData(result);
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-      } else if (selectedMenu === 'Compradores') {
-        try {
-          const response = await fetch('http://localhost:3000/api/buyers');
-          const result = await response.json();
-          setData(result);
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-      } else if (selectedMenu === 'Fornecedores') {
-        try {
-          const response = await fetch('http://localhost:3000/api/providers');
+          const response = await fetch(url);
           const result = await response.json();
           setData(result);
         } catch (error) {
@@ -68,19 +57,20 @@ function Table() {
     }
   }, [data]);
 
-  const handleOpenModal = (item) => {
-    setSelectedItem(item);
-    setIsModalOpen(true);
+  const handleOpenModal = (cedente) => {
+    setCedente(cedente); // Define o valor do cedente recebido como argumento
+    setIsModalOpen(true); // Abre o modal
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    setSelectedItem(null);
+    setCedente(null);
   };
 
   const handleButtonClick = (event, item) => {
     event.preventDefault(); // Previne o comportamento padrão do botão
-    handleOpenModal(item);
+    const cedenteValue = item[2]; // Assume que item[2] é o valor do cedente
+    handleOpenModal(cedenteValue); // Passa item[2] para o modal
   };
 
   return (
@@ -113,16 +103,16 @@ function Table() {
               )}
               {selectedMenu !== 'Notas fiscais' && (
                 <td className="px-4 py-2 border-b-2 border-t-2 border-r-2 rounded-r-md border-gray-200">
- 
+
                 </td>
               )}
             </tr>
           ))}
         </tbody>
       </table>
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal} cedente={cedente}>
         <h2 className="text-xl font-semibold mb-4">Dados do Cedente</h2>
-        <pre>{JSON.stringify(selectedItem, null, 2)}</pre>
+        <pre>{cedente}</pre>
       </Modal>
     </div>
   );
