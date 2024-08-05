@@ -90,7 +90,7 @@ Notas Fiscais
 Fornecedores
 Compradores
 
-Cada menu utiliza o componente <Table>, que interage com a API backend para trazer informações das tabelas e renderizar os dados na interface.
+Cada menu utiliza o componente < Table >, que interage com a API backend para trazer informações das tabelas e renderizar os dados na interface.
 
 O roteamento do frontend é gerenciado pelo React Router, facilitando a navegação entre as páginas da aplicação.
 
