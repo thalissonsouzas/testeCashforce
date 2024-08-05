@@ -1,8 +1,37 @@
-# React + Vite
+# 🖥️ Frontend
+🔹 Instalar Dependências:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Navegue até o diretório frontend e instale as dependências:
+    
+    npm install
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔹 Iniciar o Servidor de Desenvolvimento:
+
+Inicie o servidor de desenvolvimento:
+
+    npm run dev
+
+
+## 🌟 Uso
+
+### 🔗 Acessar a Aplicação:
+
+Abra seu navegador e acesse http://localhost:5173 ou em outra porta indicada em seu terminal.<br> Faça o login para ser direcionado ao dashboard da Cashforce.
+
+### 📋 Navegar pelos Menus:
+
+O dashboard fornecerá acesso aos seguintes menus:
+
+Notas Fiscais<br>
+Fornecedores<br>
+Compradores
+
+Cada menu utiliza o componente < Table >, que interage com a API backend para trazer informações das tabelas e renderizar os dados na interface.
+
+O roteamento do frontend é gerenciado pelo React Router, facilitando a navegação entre as páginas da aplicação.
+
+
+💡 Contribuição
+Sinta-se à vontade para contribuir para o projeto! Para isso, faça um fork do repositório e envie um pull request com suas alterações.
+

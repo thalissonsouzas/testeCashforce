@@ -17,7 +17,7 @@
     "username": "root",
     "password": "senha",
     "database": "cashforce_v3",
-    "host": "127.0.0.1",
+    "host": "mysql",
     "dialect": "mysql"
   }
 }
