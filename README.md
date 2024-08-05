@@ -25,7 +25,9 @@ A aplicação permite gerenciar e visualizar informações relacionadas a notas 
 
 ## Guia de Contribuição
 
-Para rodar o projeto em sua maquina, utilize o nosso guia [Rodando a Aplicação](#-rodando-o-projeto). Para contribuir com o projeto, acesse a documentação de cada módulo:
+Para rodar o projeto em sua maquina, utilize o nosso guia [Rodando a Aplicação]. 
+
+Documentações de frontend e backend separadas nos direórios:
 - [Documentação Frontend](frontend/README.md)
 - [Documentação Backend](backend/README.md)
 
@@ -41,7 +43,7 @@ Clone o repositório para sua máquina local:
     git clone git@github.com:thalissonsouzas/testeCashforce.git
     cd testeCashforce
 
-### 🚀 Executando
+### 🚀 Executando com Docker
 
 1. Rodar os containers
 
@@ -51,7 +53,7 @@ docker-compose up -d
 
 2. Configurar o Banco de Dados
 
-Agora vamos fazer a migração do banco de dados utilizando o **Sequelize**:
+Agora vamos fazer a migração do banco de dados e popular as tabelas utilizando o **Sequelize**:
 
 ```bash
 cd backend/
