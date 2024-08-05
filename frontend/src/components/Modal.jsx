@@ -38,7 +38,7 @@ function Modal({ isOpen, onClose, cedente }) {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
-        <div className="space-y-4 mt-4">
+        <div className="space-y-4 mt-4 text-gray-800">
           <h2 className="text-xl pt-5 font-semibold mb-4">Dados do Cedente</h2>
           {loading && <p>Carregando...</p>}
           {error && <p className="text-red-500">Erro: {error}</p>}
