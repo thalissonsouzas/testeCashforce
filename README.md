@@ -55,6 +55,7 @@ Agora vamos fazer a migração do banco de dados utilizando o **Sequelize**:
 
 ```bash
 cd backend/
+npm install
 npm run db:migrate
 ```
 
