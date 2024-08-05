@@ -58,10 +58,11 @@ function Modal({ isOpen, onClose, cedente }) {
   );
 }
 
+
+export default Modal;
+
 Modal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   cedente: PropTypes.string,
 };
-
-export default Modal;
