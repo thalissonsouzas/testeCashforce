@@ -71,7 +71,7 @@ Inicie o servidor de desenvolvimento:
 Navegue até o diretório frontend e instale as dependências:
 
 
-    cd ../frontend
+    
     npm install
 
 
