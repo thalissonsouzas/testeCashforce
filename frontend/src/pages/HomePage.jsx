@@ -14,7 +14,7 @@ function App() {
   const s3 = 'Visualize os seus fornecedores.'
 
   return (
-    <div className='relative flex w-screen '>
+    <div className='relative flex w-screen bg-white'>
       <Sidebar />
       <form className='flex flex-col w-full'>
         <section className='bg-white border-b-2 w-full h-16'></section>
