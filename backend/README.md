@@ -41,7 +41,7 @@ Para fazer uso da API, basta utilizar o endpoint `http://localhost:3000`.
 - [/cnpjs](http://localhost:3000/api/cnpjs)
 - [/offers](http://localhost:3000/api/offers)
 - [/order-portions](http://localhost:3000/api/order-portions)
-- [/providers](hhttp://localhost:3000/api/providers)
+- [/providers](http://localhost:3000/api/providers)
 - [/sponsors](http://localhost:3000/api/sponsors)
   
 
