@@ -25,9 +25,8 @@ A aplicação permite gerenciar e visualizar informações relacionadas a notas 
 
 ## Guia de Contribuição
 
-Para rodar o projeto em sua maquina, utilize o nosso guia Rodando a Aplicação. 
+Para rodar o projeto em sua maquina e saber como funciona as inicializações individualmente, acesse as documentações de frontend e backend: 
 
-Documentações de frontend e backend separadas nos direórios:
 - [Documentação Frontend](frontend/README.md)
 - [Documentação Backend](backend/README.md)
 
