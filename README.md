@@ -12,6 +12,12 @@ A aplicação permite gerenciar e visualizar informações relacionadas a notas 
 ## 🧩 Tecnologias Usadas
 **Backend:** Node.js, Express, Sequelize, MySQL<br>
 **Frontend:** React, Vite, Tailwind CSS, React Router
+<br>
+
+![teste_cashforce (Original)](https://github.com/user-attachments/assets/fa2504ea-bfba-4b41-9e6c-1f14e331f7db)
+
+
+
 
 
 ## 🚀 Funcionalidades
