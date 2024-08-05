@@ -35,8 +35,8 @@ npm run dev
 Para fazer uso da API, basta utilizar o endpoint `http://localhost:3000`.
 
 **Endpoints**:
-- [/buyer](https://localhost:3000/api/buyer)
-- [/orders](https://localhost:3000/api/buyer)
+- [/buyer](https://localhost:3000/api/buyers)
+- [/orders](https://localhost:3000/api/orders)
 - [/users](https://localhost:3000/api/users)
 - [/cnpjs](https://localhost:3000/api/cnpjs)
 - [/offers](https://localhost:3000/api/offers)
