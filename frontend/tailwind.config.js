@@ -26,6 +26,9 @@ export default {
       screens: {
         'custom': '900px',
       },
+      fontSize: {
+        'xs-90': '0.9rem', 
+      },
     },
   },
   plugins: [],

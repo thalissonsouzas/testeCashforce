@@ -1,7 +1,7 @@
 // src/components/Table.jsx
 import React, { useContext, useEffect, useState } from 'react';
 import { GlobalStateContext } from '../context/GlobalStateContext';
-import Modal from './Modal'; // Importe o componente Modal
+import Modal from './Modal'; 
 
 function Table() {
   const { selectedMenu } = useContext(GlobalStateContext);
@@ -50,16 +50,16 @@ function Table() {
 
   useEffect(() => {
     if (data.length > 0) {
-      const chaves = Object.keys(data[0]); // Extrai as chaves do primeiro objeto
-      const valores = data.map(item => Object.values(item)); // Extrai os valores de cada objeto
+      const chaves = Object.keys(data[0]); 
+      const valores = data.map(item => Object.values(item)); 
       setChaves(chaves);
       setValores(valores);
     }
   }, [data]);
 
   const handleOpenModal = (cedente) => {
-    setCedente(cedente); // Define o valor do cedente recebido como argumento
-    setIsModalOpen(true); // Abre o modal
+    setCedente(cedente); 
+    setIsModalOpen(true); 
   };
 
   const handleCloseModal = () => {
@@ -68,18 +68,18 @@ function Table() {
   };
 
   const handleButtonClick = (event, item) => {
-    event.preventDefault(); // Previne o comportamento padrão do botão
-    const cedenteValue = item[2]; // Assume que item[2] é o valor do cedente
-    handleOpenModal(cedenteValue); // Passa item[2] para o modal
+    event.preventDefault(); 
+    const cedenteValue = item[2]; 
+    handleOpenModal(cedenteValue);
   };
 
   return (
     <div className="overflow-x-auto ml-5 mr-5 text-sm">
-      <table className="w-full text-left p-5 border-separate" style={{ borderSpacing: '0 10px' }}>
+      <table className="w-full text-left border-separate" style={{ borderSpacing: '0 10px' }}>
         <thead>
           <tr className="text-gray-400">
             {chaves.map((chave, index) => (
-              <th key={index} className="px-4 py-2 border-gray-200">{chave}</th>
+              <th key={index} className="px-4 py-2 border-gray-200 whitespace-nowrap text-xs-90">{chave}</th>
             ))}
           </tr>
         </thead>
@@ -87,7 +87,7 @@ function Table() {
           {valores.map((linha, index) => (
             <tr key={index} className="bg-white font-semibold text-gray-600">
               {linha.map((valor, idx) => (
-                <td key={idx} className={`px-4 py-2 border-b-2 border-t-2 ${idx === 0 ? 'border-l-2 rounded' : ''} ${idx === 5 || idx === 4 ? 'text-custom-green' : ''} border-gray-200`}>
+                <td key={idx} className={`px-4 py-2 border-b-2 border-t-2 ${idx === 0 ? 'border-l-2 rounded' : ''} ${idx === 5 || idx === 4 ? 'text-custom-green' : ''} border-gray-200 whitespace-nowrap text-xs-90`}>
                   {valor}
                 </td>
               ))}
@@ -95,7 +95,7 @@ function Table() {
                 <td className="px-4 py-2 border-b-2 border-t-2 border-r-2 rounded-r-md border-gray-200">
                   <button
                     className="border border-gray-200 bg-white rounded-full px-3 py-1"
-                    onClick={(e) => handleButtonClick(e, linha)} // Usa a função handleButtonClick
+                    onClick={(e) => handleButtonClick(e, linha)} 
                   >
                     Dados do cedente
                   </button>
